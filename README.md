@@ -21,6 +21,6 @@ See .bat files for script execution order.
 <b>Possibilities for improvement</b>
 - Getting rid of the double step of using both Immersed and usbmidd drivers, and instead rely on drivers that for sure are not prone to licensing issues (don't know if these two are).
   - Possibilities: https://virtualmonitor.github.io/ and https://github.com/roshkins/IddSampleDriver and https://github.com/ge9/IddSampleDriver/
-  
+  - Read from here to possibly apply the last option: https://www.reddit.com/r/MoonlightStreaming/comments/rzpcpc/moonlight_streaming_without_monitor_no_dummy_plug/
   
   
