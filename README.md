@@ -1,6 +1,7 @@
 # Virtual-Screens-Driver-Setup
 Scripts and drivers for installing multiple virtual screens for use with VR applications that displays the desktop.
 Utilizes a combination of drivers from Immersed (https://immersed.com/) and usbmidd from Amyuni (https://www.amyuni.com/forum/viewtopic.php?t=3030), in order to create multiple instances of virtual screens.
+(the driver from amyuni forms the basis, and their cmd-line tool allows me to enable and disable the drivers programmatically. And the drivers from immersed allows me to create multiple instances)
 
 Scripts are Powershell scripts for activating the virtual screens and setting resolutions.
 See .bat files for script execution order.
