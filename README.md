@@ -3,8 +3,6 @@ Scripts and drivers for installing multiple virtual screens for use with VR appl
 Utilizes a combination of drivers from Immersed (https://immersed.com/) and usbmidd from Amyuni (https://www.amyuni.com/forum/viewtopic.php?t=3030), in order to create multiple instances of virtual screens.
 
 Scripts are Powershell scripts for activating the virtual screens and setting resolutions.
-AutoHotKey scripts are also included, in order to account for the scale function not being accessible through PowerShell (per 2020).
-
 See .bat files for script execution order.
 
 <b>DRIVER INSTALL</b>
@@ -15,6 +13,25 @@ See .bat files for script execution order.
 5. Then choose "Browse my computer for drivers", and then choose "Let me pick from a list of available drivers on my computer".
 6. Select "Immersed Inc." and "Immersed Virtual Display Adapter", and click OK.
 7. A new monitor should now be automatically installed and present under "Display settings".
+
+IMPORTANT! IN ORDER FOR THE CURRENT .BAT FILES TO APPROPRIATELY WORK WITH WINDOWS SCALING AUTOMATICALLY, DO THE FOLLOWING STEPS:
+
+1. [WIN]+R "ms-settings:display"
+2. Set default scaling for your primary monitor per your usual preference (for mine 150%).
+3. Export reg key "Computer\HKEY_CURRENT_USER\Control Panel\Desktop", and save as "StandardDPISettings.reg" in same folder as .bat scripts.
+4. Then set scaling to 100%, and export reg key "Computer\HKEY_CURRENT_USER\Control Panel\Desktop" again, and save as "NoneScaleDPISettings.reg" in same folder as .bat scripts.
+5. Now enjoy easy activation/deactivation and setup of virtual screens when needed (e.g., together with Virtual Desktop for VR).
+
+Thanks for the following discussions for pointing me in the appropriate direction, and enlightening me, that the scaling could be done without reboot or signout/-in:
+- https://community.spiceworks.com/how_to/176533-overriding-windows-display-scale
+- https://stackoverflow.com/questions/35233182/how-can-i-change-windows-10-display-scaling-programmatically-using-c-sharp
+- https://stackoverflow.com/questions/49676660/how-to-run-the-reg-file-using-powershell
+
+Also a HUGE thank you to Timothy Mui for the powershell script upon which I have built my setup (https://github.com/timmui/ScreenResolutionChanger)
+
+
+Be aware that the shortcuts (.lnk) files holds the argument for how many screens should be created, and needs to be directed to wherever the "VirtualScreens_Enable.bat" file is located. 
+
 
 
 
