@@ -23,6 +23,12 @@
 #                   TechNet (https://gallery.technet.microsoft.com/ScriptCenter/2a631d72-206d-4036-a3f2-2e150f297515/) 
 #  
 # ------------------------------------------------------------------------ 
+
+#CMD-LINE ARGUMENT. 1 FOR SINGLE MONITOR. 2 FOR MULTI MONITOR
+param(
+[Int32]
+$count) 
+
 Function Set-ScreenResolutionEx {  
 param (  
 [Parameter(Mandatory=$true,  
@@ -306,8 +312,18 @@ Add-Type $Code
 [ResolutionPosition.ScreenResolution]::ChangeResolutionPosition($width,$height,$rotation,$DeviceID, $x, $y)
 } 
 
-Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 0 -X 0 -Y 0 
-Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 3 -X 1600 -Y 0 
-Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 4 -X 0 -Y 900
-Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 1 -DeviceID 5 -X -900 -Y -450
-Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 6 -X 0 -Y -900
+if(1 -eq $count)
+{
+    echo $count
+    Set-ScreenResolutionEx -Width 3240 -Height 2160 -Rotation 0 -DeviceID 0 -X 0 -Y 0 
+}
+
+if (2 -eq $count)
+{
+  echo $count
+    Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 0 -X 0 -Y 0 
+    Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 3 -X 1600 -Y 0 
+    Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 4 -X 1600 -Y 900
+    Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 1 -DeviceID 5 -X -900 -Y 0
+    Set-ScreenResolutionEx -Width 1600 -Height 900 -Rotation 0 -DeviceID 6 -X 0 -Y 900
+}

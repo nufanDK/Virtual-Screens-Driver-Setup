@@ -37,4 +37,4 @@ GOTO ResolutionOrientation
 
 :ResolutionOrientation
 TIMEOUT 1
-.\ChangeResolutionOrientation.cmd
+.\ChangeResolutionOrientation.cmd 2
