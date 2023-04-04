@@ -22,19 +22,19 @@ GOTO ExtendDesktop
 
 
 :Continue4
-.\usbmmidd\deviceinstaller64.exe enable *VirtualDisplay1 *VirtualDisplay2 *VirtualDisplay3 *VirtualDisplay4 *VirtualDisplay5
+.\usbmmidd\deviceinstaller64.exe enable *VirtualDisplay1 *VirtualDisplay2 *VirtualDisplay3 *VirtualDisplay4
 GOTO ExtendDesktop
 
 :ExtendDesktop
 TIMEOUT 1
 displayswitch /extend
+GOTO ChangeScale
+
+:ChangeScale
+TIMEOUT 2
+reg import .\NoneScaleDPISettings.reg
 GOTO ResolutionOrientation
 
 :ResolutionOrientation
 TIMEOUT 1
 .\ChangeResolutionOrientation.cmd
-GOTO ChangeScale
-
-:ChangeScale
-TIMEOUT 3
-.\disableScale.ahk
